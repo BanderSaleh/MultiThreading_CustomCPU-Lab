@@ -34,6 +34,167 @@ namespace CustomCPU_Code
 
 
 
+        // Methods:
+        // DisplayToRtb
+        public void DisplayToRTB(string message)
+        {
+            rtbDisplay.Text += message + "\n"; // Adds Message.Text to our rtbDisplay; + "/n" means New Line.
+        }
+
+        // ShortProcess()
+        public void ShortProcess()
+        {
+            DisplayToRTB("Short Process Started");
+            DisplayToRTB("Short Process Ended");
+        }
+
+        // LongProcess
+        public void LongProcess()
+        {
+            DisplayToRTB("Long Process Started");
+
+            // This ("Thread.Sleep(time in ms)") is locking up the Main thread that the GUI is on
+            Thread.Sleep(6000); // 1 thousand milliseconds equals 1 second
+
+            DisplayToRTB("Long Process Ended");
+
+
+        }
+
+        
+
+        // Click-Event(s)
+        private void btnExample1_Click(object sender, EventArgs e)
+        {
+            ShortProcess();
+            LongProcess();
+
+        } // Run ( Sync ) button
+
+
+
+        // Build our async methods
+        // async - method modifier - Tells the computer that a method runs in a special way
+        // await
+        // Tasks
+        public async void LongAsync(int number)
+        {
+            DisplayToRTB($"LongAsync started : Thread {number}");
+
+            // Replace Thread.Sleep with the async version
+
+            await Task.Delay(4000);
+
+            DisplayToRTB($"LongAsync Ended : Thread {number}");
+
+        } // LongAsync
+
+        private void btnAsync_Click(object sender, EventArgs e)
+        {
+            LongAsync(1);
+            ShortProcess();
+        } // btnAsync_Click
+
+        private void btnMultiThread_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                LongAsync(i);
+            }
+        } // btnMultiThread_Click
+
+        private void btnStopWatch_Click(object sender, EventArgs e)
+        {
+            LoopAsync();
+        } // btnStopWatch_Click
+
+        public void StopwatchExample()
+        {
+            Stopwatch sw = new Stopwatch();
+            // Start my stopwatch
+            sw.Start(); // Starts the stop watch
+
+            int multiplier = 10 * 10 * 10 * 10 * 10 * 10;
+            for (int i = 0; i < 100 * multiplier; i++)
+            {
+                Random rand = new Random();
+                int randomNum1 = rand.Next(0, 1000000);
+                Random rand2 = new Random(randomNum1);
+                int randomNum2 = rand.Next(0, randomNum1);
+                Random rand3 = new Random(randomNum2);
+                int randomNum3 = rand.Next(0, randomNum2);
+
+            }
+
+
+            // Stop my stopwatch
+            sw.Stop(); // Stops the stop watch
+
+            DisplayToRTB(sw.ElapsedMilliseconds.ToString());
+        } // Stopwatch Example
+
+        public async void LoopAsync()
+        {
+            Stopwatch sw = new Stopwatch();
+            // Start my stopwatch
+            sw.Start(); // Starts the stop watch
+
+            int multiplier = 10 * 10 * 10 * 10 * 10;
+
+            await Task.Run(() =>
+            {
+                for (int i = 0; i < 100000; i++)
+                {
+                    Random rand = new Random();
+                    int randomNum1 = rand.Next(0, 1000000);
+                    Random rand2 = new Random(randomNum1);
+                    int randomNum2 = rand.Next(0, randomNum1);
+                    Random rand3 = new Random(randomNum2);
+                    int randomNum3 = rand.Next(0, randomNum2);
+
+                }
+                DisplayToRTB("The for loop just stopped running");
+            });
+
+            // Stop my stopwatch
+            sw.Stop(); // Stops the stop watch
+
+            DisplayToRTB(sw.ElapsedMilliseconds.ToString());
+        } // LoopAsync
+
+        Action<int> loop = (s) =>
+        {
+            for (int i = 0; i < 100 * s; i++)
+            {
+                Random rand = new Random();
+                int randomNum1 = rand.Next(0, 1000000);
+                Random rand2 = new Random(randomNum1);
+                int randomNum2 = rand.Next(0, randomNum1);
+                Random rand3 = new Random(randomNum2);
+                int randomNum3 = rand.Next(0, randomNum2);
+
+            }
+        };
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            rtbDisplay.Text = "";
+        }
+
+        private void rtbDisplay_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+
+
+
+
+
+
+
         // ---------------- Returning Values - Start
 
         // A callback is when a method is called after another event finishes
@@ -155,186 +316,10 @@ namespace CustomCPU_Code
 
         // ----------------- Returning Values - End
 
-        public void DisplayToRTB(string message)
-        {
-            rtbDisplay.Text += message + "\n"; // "/n" means New Line 
-        } // DisplayToRtb
-
-        public void LongProcess()
-        {
-            DisplayToRTB("Long Process Started");
-
-            // This is locking up the Main thread that the GUI is on
-            Thread.Sleep(6000); // 1 thousand milliseconds equals 1 second
-
-            DisplayToRTB("Long Process Ended");
 
 
-        } // LongProcess
 
-        // Create another method for ShortProcess()
-        public void ShortProcess()
-        {
-            DisplayToRTB("Short Process Started");
-            DisplayToRTB("Short Process Ended");
-        } // ShortProcess()
-
-        private void btnExample1_Click(object sender, EventArgs e)
-        {
-            ShortProcess();
-            LongProcess();
-
-        }
-
-        // Build our async methods
-        // async - method modifier - Tells the computer that a method runs in a special way
-        // await
-        // Tasks
-        public async void LongAsync(int number)
-        {
-            DisplayToRTB($"LongAsync started : Thread {number}");
-
-            // Replace Thread.Sleep with the async version
-
-            await Task.Delay(4000);
-
-            DisplayToRTB($"LongAsync Ended : Thread {number}");
-
-        } // LongAsync
-
-        private void btnAsync_Click(object sender, EventArgs e)
-        {
-            LongAsync(1);
-            ShortProcess();
-        } // btnAsync_Click
-
-        private void btnMultiThread_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                LongAsync(i);
-            }
-        } // btnMultiThread_Click
-
-        private void btnStopWatch_Click(object sender, EventArgs e)
-        {
-            LoopAsync();
-        } // btnStopWatch_Click
-
-        public void StopwatchExample()
-        {
-            Stopwatch sw = new Stopwatch();
-            // Start my stopwatch
-            sw.Start(); // Starts the stop watch
-
-            int multiplier = 10 * 10 * 10 * 10 * 10 * 10;
-            for (int i = 0; i < 100 * multiplier; i++)
-            {
-                Random rand = new Random();
-                int randomNum1 = rand.Next(0, 1000000);
-                Random rand2 = new Random(randomNum1);
-                int randomNum2 = rand.Next(0, randomNum1);
-                Random rand3 = new Random(randomNum2);
-                int randomNum3 = rand.Next(0, randomNum2);
-
-            }
-
-
-            // Stop my stopwatch
-            sw.Stop(); // Stops the stop watch
-
-            DisplayToRTB(sw.ElapsedMilliseconds.ToString());
-        } // Stopwatch Example
-
-        public async void LoopAsync()
-        {
-            Stopwatch sw = new Stopwatch();
-            // Start my stopwatch
-            sw.Start(); // Starts the stop watch
-
-            int multiplier = 10 * 10 * 10 * 10 * 10;
-
-            await Task.Run(() =>
-            {
-                for (int i = 0; i < 100000; i++)
-                {
-                    Random rand = new Random();
-                    int randomNum1 = rand.Next(0, 1000000);
-                    Random rand2 = new Random(randomNum1);
-                    int randomNum2 = rand.Next(0, randomNum1);
-                    Random rand3 = new Random(randomNum2);
-                    int randomNum3 = rand.Next(0, randomNum2);
-
-                }
-                DisplayToRTB("The for loop just stopped running");
-            });
-
-            // Stop my stopwatch
-            sw.Stop(); // Stops the stop watch
-
-            DisplayToRTB(sw.ElapsedMilliseconds.ToString());
-        } // LoopAsync
-
-        Action<int> loop = (s) =>
-        {
-            for (int i = 0; i < 100 * s; i++)
-            {
-                Random rand = new Random();
-                int randomNum1 = rand.Next(0, 1000000);
-                Random rand2 = new Random(randomNum1);
-                int randomNum2 = rand.Next(0, randomNum1);
-                Random rand3 = new Random(randomNum2);
-                int randomNum3 = rand.Next(0, randomNum2);
-
-            }
-        };
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            rtbDisplay.Text = "";
-        }
-
-        private void rtbDisplay_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        // Click-Events
-        private void btnExample1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnAsync_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnMultiThread_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnStopWatch_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnClear_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReturnValue_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCallBack_Click_1(object sender, EventArgs e)
-        {
-
-        }
+        
 
 
 

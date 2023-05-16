@@ -1,4 +1,6 @@
-﻿namespace CustomCPU_Code
+﻿using System;
+
+namespace CustomCPU_Code
 {
     partial class Form1
     {
@@ -47,7 +49,7 @@
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
-            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // btnCallBack
             // 
@@ -58,7 +60,7 @@
             this.btnCallBack.TabIndex = 14;
             this.btnCallBack.Text = "Callback";
             this.btnCallBack.UseVisualStyleBackColor = true;
-            this.btnCallBack.Click += new System.EventHandler(this.btnCallBack_Click_1);
+            this.btnCallBack.Click += new System.EventHandler(this.btnCallBack_Click);
             // 
             // btnReturnValue
             // 
@@ -69,7 +71,7 @@
             this.btnReturnValue.TabIndex = 13;
             this.btnReturnValue.Text = "Return Value";
             this.btnReturnValue.UseVisualStyleBackColor = true;
-            this.btnReturnValue.Click += new System.EventHandler(this.btnReturnValue_Click_1);
+            this.btnReturnValue.Click += new System.EventHandler(this.btnReturnValue_Click);
             // 
             // btnStopWatch
             // 
@@ -80,7 +82,7 @@
             this.btnStopWatch.TabIndex = 12;
             this.btnStopWatch.Text = "Stopwatch Example";
             this.btnStopWatch.UseVisualStyleBackColor = true;
-            this.btnStopWatch.Click += new System.EventHandler(this.btnStopWatch_Click_1);
+            this.btnStopWatch.Click += new System.EventHandler(this.btnStopWatch_Click);
             // 
             // btnMultiThread
             // 
@@ -91,7 +93,7 @@
             this.btnMultiThread.TabIndex = 11;
             this.btnMultiThread.Text = "Run ( Multiple )";
             this.btnMultiThread.UseVisualStyleBackColor = true;
-            this.btnMultiThread.Click += new System.EventHandler(this.btnMultiThread_Click_1);
+            this.btnMultiThread.Click += new System.EventHandler(this.btnMultiThread_Click);
             // 
             // btnAsync
             // 
@@ -102,7 +104,7 @@
             this.btnAsync.TabIndex = 10;
             this.btnAsync.Text = "Run ( ASync )";
             this.btnAsync.UseVisualStyleBackColor = true;
-            this.btnAsync.Click += new System.EventHandler(this.btnAsync_Click_1);
+            this.btnAsync.Click += new System.EventHandler(this.btnAsync_Click);
             // 
             // btnExample1
             // 
@@ -113,7 +115,7 @@
             this.btnExample1.TabIndex = 9;
             this.btnExample1.Text = "Run ( Sync )";
             this.btnExample1.UseVisualStyleBackColor = true;
-            this.btnExample1.Click += new System.EventHandler(this.btnExample1_Click_1);
+            this.btnExample1.Click += new System.EventHandler(this.btnExample1_Click);
             // 
             // rtbDisplay
             // 
@@ -144,8 +146,9 @@
 
         }
 
-        #endregion
+      
 
+       
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnCallBack;
         private System.Windows.Forms.Button btnReturnValue;
@@ -156,4 +159,4 @@
         private System.Windows.Forms.RichTextBox rtbDisplay;
     }
 }
-
+#endregion
