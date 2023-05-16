@@ -300,6 +300,43 @@ namespace CustomCPU_Code
         }
 
 
+        // Click-Events
+        private void btnExample1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAsync_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMultiThread_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnStopWatch_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClear_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReturnValue_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCallBack_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+
 
         // Stopwatch : What is it and why is it so important
         // Stopwatch Object

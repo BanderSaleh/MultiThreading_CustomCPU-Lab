@@ -47,6 +47,7 @@
             this.btnClear.TabIndex = 15;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click_1);
             // 
             // btnCallBack
             // 
@@ -57,6 +58,7 @@
             this.btnCallBack.TabIndex = 14;
             this.btnCallBack.Text = "Callback";
             this.btnCallBack.UseVisualStyleBackColor = true;
+            this.btnCallBack.Click += new System.EventHandler(this.btnCallBack_Click_1);
             // 
             // btnReturnValue
             // 
@@ -67,6 +69,7 @@
             this.btnReturnValue.TabIndex = 13;
             this.btnReturnValue.Text = "Return Value";
             this.btnReturnValue.UseVisualStyleBackColor = true;
+            this.btnReturnValue.Click += new System.EventHandler(this.btnReturnValue_Click_1);
             // 
             // btnStopWatch
             // 
@@ -77,6 +80,7 @@
             this.btnStopWatch.TabIndex = 12;
             this.btnStopWatch.Text = "Stopwatch Example";
             this.btnStopWatch.UseVisualStyleBackColor = true;
+            this.btnStopWatch.Click += new System.EventHandler(this.btnStopWatch_Click_1);
             // 
             // btnMultiThread
             // 
@@ -87,6 +91,7 @@
             this.btnMultiThread.TabIndex = 11;
             this.btnMultiThread.Text = "Run ( Multiple )";
             this.btnMultiThread.UseVisualStyleBackColor = true;
+            this.btnMultiThread.Click += new System.EventHandler(this.btnMultiThread_Click_1);
             // 
             // btnAsync
             // 
@@ -97,6 +102,7 @@
             this.btnAsync.TabIndex = 10;
             this.btnAsync.Text = "Run ( ASync )";
             this.btnAsync.UseVisualStyleBackColor = true;
+            this.btnAsync.Click += new System.EventHandler(this.btnAsync_Click_1);
             // 
             // btnExample1
             // 
@@ -107,6 +113,7 @@
             this.btnExample1.TabIndex = 9;
             this.btnExample1.Text = "Run ( Sync )";
             this.btnExample1.UseVisualStyleBackColor = true;
+            this.btnExample1.Click += new System.EventHandler(this.btnExample1_Click_1);
             // 
             // rtbDisplay
             // 
