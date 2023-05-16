@@ -1,0 +1,11 @@
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\CustomCPU_Code.csproj.AssemblyReference.cache
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\CustomCPU_Code.csproj.SuggestedBindingRedirects.cache
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\CustomCPU_Code.Form1.resources
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.Properties.Resources.resources
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\CustomCPU_Code.csproj.GenerateResource.cache
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\CustomCPU_Code.csproj.CoreCompileInputs.cache
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe.config
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.exe
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\bin\Debug\WindowsFormsApp1.pdb
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe
+C:\Users\bande\Desktop\Renton Tech College stuff\Classes\2023 Spring\Computer Programming IV\Week 1-5\MultiThreading_WinFormsApp\WindowsFormsApp1\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
