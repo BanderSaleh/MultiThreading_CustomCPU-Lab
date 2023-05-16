@@ -16,12 +16,14 @@ namespace CustomCPU_Code
     {
 
         // NOTES:
-        //ThreadSafety: Locks up the data before fully purchasing a shopping cart to notify other people different threads/lanes where the other user is.,
+        //ThreadSafety(A tech company says that this is the most important feature): Locks up the data before fully purchasing a shopping cart item to notify users on different threads what other users are doing.
         //Syncronized means they're moving together in unison (coordinated)
+
+
         public Form1()
         {
             InitializeComponent();
-            DisplayToRTB("Display Message"); //Testing I can display text in my RichTextBox
+            DisplayToRTB("Hello World!"); //Testing that I can display text in my RichTextBox
 
             // Two new topics
             // Returning a value async
