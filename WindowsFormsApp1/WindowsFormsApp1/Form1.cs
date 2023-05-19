@@ -19,6 +19,10 @@ namespace CustomCPU_Code
         //ThreadSafety(A tech company says that this is the most important feature): Locks up the data before fully purchasing a shopping cart item to notify users on different threads what other users are doing.
         //Syncronized means they're moving together in unison (coordinated)
 
+        //Progress: Video 1/2 @ timestamp = 40:42
+        // https://rtc.instructure.com/courses/2352365/assignments/29891218?module_item_id=74257830
+
+
 
         public Form1()
         {
@@ -34,21 +38,18 @@ namespace CustomCPU_Code
 
 
 
-        // Methods:
-        // DisplayToRtb
+        // Methods
         public void DisplayToRTB(string message)
         {
             rtbDisplay.Text += message + "\n"; // Adds Message.Text to our rtbDisplay; + "/n" means New Line.
-        }
+        } // DisplayToRtb Method
 
-        // ShortProcess()
         public void ShortProcess()
         {
             DisplayToRTB("Short Process Started");
             DisplayToRTB("Short Process Ended");
-        }
+        } // ShortProcess Method
 
-        // LongProcess
         public void LongProcess()
         {
             DisplayToRTB("Long Process Started");
@@ -59,25 +60,15 @@ namespace CustomCPU_Code
             DisplayToRTB("Long Process Ended");
 
 
-        }
-
-        
-
-        // Click-Event(s)
-        private void btnExample1_Click(object sender, EventArgs e)
-        {
-            ShortProcess();
-            LongProcess();
-
-        } // Run ( Sync ) button
-
+        } // LongProcess Method
 
 
         // Build our async methods
-        // async - method modifier - Tells the computer that a method runs in a special way
+        // async - method modifier - Tells the computer that a method runs in a special way (like a static async method or abstract...)
         // await
         // Tasks
-        public async void LongAsync(int number)
+
+        public async void LongAsync(int number) //Async keyword tells the computer to run it on another thread
         {
             DisplayToRTB($"LongAsync started : Thread {number}");
 
@@ -87,26 +78,9 @@ namespace CustomCPU_Code
 
             DisplayToRTB($"LongAsync Ended : Thread {number}");
 
-        } // LongAsync
+        } // LongAsync Method
 
-        private void btnAsync_Click(object sender, EventArgs e)
-        {
-            LongAsync(1);
-            ShortProcess();
-        } // btnAsync_Click
 
-        private void btnMultiThread_Click(object sender, EventArgs e)
-        {
-            for (int i = 0; i < 5; i++)
-            {
-                LongAsync(i);
-            }
-        } // btnMultiThread_Click
-
-        private void btnStopWatch_Click(object sender, EventArgs e)
-        {
-            LoopAsync();
-        } // btnStopWatch_Click
 
         public void StopwatchExample()
         {
@@ -131,7 +105,7 @@ namespace CustomCPU_Code
             sw.Stop(); // Stops the stop watch
 
             DisplayToRTB(sw.ElapsedMilliseconds.ToString());
-        } // Stopwatch Example
+        } // Stopwatch Example Method
 
         public async void LoopAsync()
         {
@@ -179,12 +153,47 @@ namespace CustomCPU_Code
         private void btnClear_Click(object sender, EventArgs e)
         {
             rtbDisplay.Text = "";
-        }
+        } 
 
         private void rtbDisplay_TextChanged(object sender, EventArgs e)
         {
 
         }
+
+
+
+
+
+
+        // Click-Events
+        private void btnExample1_Click(object sender, EventArgs e)
+        {
+            ShortProcess();
+            LongProcess();
+
+        } // Run(Sync)_button
+        private void btnAsync_Click(object sender, EventArgs e)
+        {
+            LongAsync(1);
+            ShortProcess();
+        } // btnAsync_Click
+
+        private void btnMultiThread_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 5; i++)
+            {
+                LongAsync(i);
+            }
+        } // btnMultiThread_Click
+
+        private void btnStopWatch_Click(object sender, EventArgs e)
+        {
+            LoopAsync();
+        } // btnStopWatch_Click
+
+
+
+        
 
 
 
