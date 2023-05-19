@@ -19,7 +19,7 @@ namespace CustomCPU_Code
         //ThreadSafety(A tech company says that this is the most important feature): Locks up the data before fully purchasing a shopping cart item to notify users on different threads what other users are doing.
         //Syncronized means they're moving together in unison (coordinated)
 
-        //Progress: Video 1/2 @ timestamp = 40:42
+        //Progress: Video 1/2 @ timestamp = Stopwatch section
         // https://rtc.instructure.com/courses/2352365/assignments/29891218?module_item_id=74257830
 
 
@@ -82,6 +82,8 @@ namespace CustomCPU_Code
 
 
 
+
+
         public void StopwatchExample()
         {
             Stopwatch sw = new Stopwatch();
@@ -91,19 +93,19 @@ namespace CustomCPU_Code
             int multiplier = 10 * 10 * 10 * 10 * 10 * 10;
             for (int i = 0; i < 100 * multiplier; i++)
             {
-                Random rand = new Random();
-                int randomNum1 = rand.Next(0, 1000000);
-                Random rand2 = new Random(randomNum1);
-                int randomNum2 = rand.Next(0, randomNum1);
-                Random rand3 = new Random(randomNum2);
-                int randomNum3 = rand.Next(0, randomNum2);
+                //Random rand = new Random();
+                //int randomNum1 = rand.Next(0, 1000000);
+                //Random rand2 = new Random(randomNum1);
+                //int randomNum2 = rand.Next(0, randomNum1);
+                //Random rand3 = new Random(randomNum2);
+                //int randomNum3 = rand.Next(0, randomNum2);
 
             }
 
 
             // Stop my stopwatch
             sw.Stop(); // Stops the stop watch
-
+       //   DisplayToRTB("Stopwatch test");
             DisplayToRTB(sw.ElapsedMilliseconds.ToString());
         } // Stopwatch Example Method
 
@@ -117,7 +119,7 @@ namespace CustomCPU_Code
 
             await Task.Run(() =>
             {
-                for (int i = 0; i < 100000; i++)
+                for (int i = 0; i < 1 * multiplier; i++)
                 {
                     Random rand = new Random();
                     int randomNum1 = rand.Next(0, 1000000);
@@ -165,6 +167,8 @@ namespace CustomCPU_Code
 
 
 
+
+
         // Click-Events
         private void btnExample1_Click(object sender, EventArgs e)
         {
@@ -188,7 +192,8 @@ namespace CustomCPU_Code
 
         private void btnStopWatch_Click(object sender, EventArgs e)
         {
-            LoopAsync();
+          //StopwatchExample();
+          LoopAsync();
         } // btnStopWatch_Click
 
 
