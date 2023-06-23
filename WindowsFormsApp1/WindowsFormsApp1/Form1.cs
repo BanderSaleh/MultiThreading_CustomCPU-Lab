@@ -27,7 +27,7 @@ namespace CustomCPU_Code
         public Form1()
         {
             InitializeComponent();
-            DisplayToRTB("Hello World!"); //Testing that I can display text in my RichTextBox
+            //DisplayToRTB("Hello World!"); //Testing that I can display text in my RichTextBox
 
             // Two new topics
             // Returning a value async
@@ -93,21 +93,21 @@ namespace CustomCPU_Code
             int multiplier = 10 * 10 * 10 * 10 * 10 * 10;
             for (int i = 0; i < 100 * multiplier; i++)
             {
-                //Random rand = new Random();
-                //int randomNum1 = rand.Next(0, 1000000);
-                //Random rand2 = new Random(randomNum1);
-                //int randomNum2 = rand.Next(0, randomNum1);
-                //Random rand3 = new Random(randomNum2);
-                //int randomNum3 = rand.Next(0, randomNum2);
+                Random rand = new Random();
+                int randomNum1 = rand.Next(0, 1000000);
+                Random rand2 = new Random(randomNum1);
+                int randomNum2 = rand.Next(0, randomNum1);
+                Random rand3 = new Random(randomNum2);
+                int randomNum3 = rand.Next(0, randomNum2);
 
             }
 
 
             // Stop my stopwatch
             sw.Stop(); // Stops the stop watch
-       //   DisplayToRTB("Stopwatch test");
+
             DisplayToRTB(sw.ElapsedMilliseconds.ToString());
-        } // Stopwatch Example Method
+        } // Stopwatch Example
 
         public async void LoopAsync()
         {
@@ -119,7 +119,7 @@ namespace CustomCPU_Code
 
             await Task.Run(() =>
             {
-                for (int i = 0; i < 1 * multiplier; i++)
+                for (int i = 0; i < 100000; i++)
                 {
                     Random rand = new Random();
                     int randomNum1 = rand.Next(0, 1000000);
@@ -129,7 +129,7 @@ namespace CustomCPU_Code
                     int randomNum3 = rand.Next(0, randomNum2);
 
                 }
-                DisplayToRTB("The for loop just stopped running");
+                //DisplayToRTB("The for loop just stopped running");
             });
 
             // Stop my stopwatch
@@ -157,10 +157,10 @@ namespace CustomCPU_Code
             rtbDisplay.Text = "";
         } 
 
-        private void rtbDisplay_TextChanged(object sender, EventArgs e)
-        {
+        //private void rtbDisplay_TextChanged(object sender, EventArgs e)
+        //{
 
-        }
+        //}
 
 
 
@@ -192,8 +192,8 @@ namespace CustomCPU_Code
 
         private void btnStopWatch_Click(object sender, EventArgs e)
         {
-          //StopwatchExample();
-          LoopAsync();
+            //StopwatchExample();
+            LoopAsync();
         } // btnStopWatch_Click
 
 
@@ -212,7 +212,7 @@ namespace CustomCPU_Code
         // ---------------- Returning Values - Start
 
         // A callback is when a method is called after another event finishes
-        private async void btnCallBack_Click(object sender, EventArgs e)
+        private void btnCallBack_Click(object sender, EventArgs e)
         {
             //Task<int> task = Task.Run(async () =>
             //{
@@ -252,7 +252,7 @@ namespace CustomCPU_Code
             //DisplayToRTB(number.ToString());
         }
 
-        private async void btnReturnValue_Click(object sender, EventArgs e)
+        public async void btnReturnValue_Click(object sender, EventArgs e)
         {
             DisplayToRTB("Before we call our async method");
             // use await to let your async method return a specific type
