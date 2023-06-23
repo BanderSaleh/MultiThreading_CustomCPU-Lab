@@ -68,7 +68,7 @@ namespace CustomCPU_Code
         // await
         // Tasks
 
-        public async void LongAsync(int number) //Async keyword tells the computer to run it on another thread
+        private async void LongAsync(int number) //Async keyword tells the computer to run it on another thread
         {
             DisplayToRTB($"LongAsync started : Thread {number}");
 
@@ -119,7 +119,7 @@ namespace CustomCPU_Code
 
             await Task.Run(() =>
             {
-                for (int i = 0; i < 100000; i++)
+                for (int i = 0; i < multiplier; i++)
                 {
                     Random rand = new Random();
                     int randomNum1 = rand.Next(0, 1000000);
@@ -212,7 +212,7 @@ namespace CustomCPU_Code
         // ---------------- Returning Values - Start
 
         // A callback is when a method is called after another event finishes
-        private void btnCallBack_Click(object sender, EventArgs e)
+        private async void btnCallBack_Click(object sender, EventArgs e)
         {
             //Task<int> task = Task.Run(async () =>
             //{
